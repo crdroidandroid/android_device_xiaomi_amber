@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.dolby;
+package com.xiaomi.dolby;
 
 import android.os.Bundle;
 
@@ -28,7 +28,11 @@ public class DolbyActivity extends CollapsingToolbarBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                new DolbySettingsFragment(), TAG_DOLBY).commit();
+        getFragmentManager().beginTransaction()
+            .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                     new DolbySettingsFragment(),
+                     TAG_DOLBY)
+            .commit();
+
     }
 }

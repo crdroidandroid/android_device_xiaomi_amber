@@ -69,6 +69,7 @@ PRODUCT_PACKAGES += \
     libnbaio_mono
 
 PRODUCT_PACKAGES += \
+    XiaomiDolby \
     MtkInCallService
 
 PRODUCT_COPY_FILES += \
@@ -265,10 +266,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_nfc/android.hardware.nfc.hcef.xml \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_nfc/android.hardware.nfc.uicc.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_nfc/com.android.nfc_extras.xml
-
-# Parts
-PRODUCT_PACKAGES += \
-    XiaomiParts
 
 # Permissions
 PRODUCT_COPY_FILES += \
