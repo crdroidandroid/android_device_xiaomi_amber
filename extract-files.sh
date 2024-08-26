@@ -59,8 +59,17 @@ fi
 
 function blob_fixup {
     case "$1" in
+        system_ext/priv-app/ImsService/ImsService.apk)
+            apktool_patch "${2}" "${MY_DIR}/blob-patches/ImsService.patch" -r
+            ;;
         system_ext/lib64/libsink.so)
             "${PATCHELF}" --add-needed "libshim_sink.so" "$2"
+            ;;
+        vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
+            grep -q "libstagefright_foundation-v33.so" "$2" || "$PATCHELF" --add-needed "libstagefright_foundation-v33.so" "$2"
+            ;;
+        vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc)
+            sed -i 's/start/enable/' "$2"
             ;;
         vendor/bin/mnld|\
         vendor/lib*/hw/android.hardware.sensors@2.X-subhal-mediatek.so|\
